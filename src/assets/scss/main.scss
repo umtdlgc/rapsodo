@@ -1,0 +1,163 @@
+
+
+$primary:#383c41;
+$secondary:#bababa;
+$black:#404040;
+$gray:#7c7e7f;
+$red:#c8102e;
+
+@font-face {
+  font-family: "Montserrat";
+  src:  url("./../fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "MontserratMedium";
+  src:  url("./../fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "MontserratBold";
+  src: url("./../fonts/Montserrat-Bold.ttf");
+  font-weight: 700;
+}
+
+body{
+  color: $primary;
+  font-family: "Montserrat";
+  margin: 0;
+}
+h2,h3,p{
+  margin:0;
+}
+.fs-18{
+  font-size:18px;
+}
+.fs-15{
+  font-size:15px;
+}
+.fs-12{
+  font-size:12px;
+}
+.red-text{
+  color: $red;
+}
+.gray-text{
+  color: $gray;
+}
+.black-text{
+  color: $black;
+}
+
+.bold{
+  font-family: "MontserratBold";
+}
+.medium{
+  font-family: "MontserratMedium";
+}
+.mb-1{
+  margin-bottom: 10px;
+}
+.mb-2{
+  margin-bottom: 15px;
+}
+.mb-3{
+  margin-bottom: 20px;
+}
+.mb-5{
+  margin-bottom: 50px;
+}
+.mb-auto{
+  margin-bottom:auto;
+}
+.d-flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.h-100{
+height: 100%;
+}
+.w-100{
+  width: 100%;
+}
+input[type="text"],
+input[type="password"]{
+  border-radius: 6px;
+  border: solid 1px #ededed !important;
+  height: 46px;
+  background: #fff;
+  outline: none;
+  padding: 0 0 0 15px;
+  letter-spacing: normal;
+  font-family: "Montserrat";
+  &::placeholder { 
+    color: #bbbcbc;
+  }
+  &::-ms-input-placeholder { 
+    color: #bbbcbc;
+  }
+  &::-ms-input-placeholder { 
+    color: #bbbcbc;
+  }
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  }
+  &.small{
+    max-width: 300px;
+  }
+}
+
+.btn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius: 29px;
+  width: 100%;
+  border: 1px solid $red;
+  background:#fff;
+  height: 60px;
+  color: $red;
+  &.small{
+    max-width: 300px;
+    font-size: 18px;
+  }
+  &.passive{
+    background-color: #ededed;
+    border: none;
+    color: $secondary;
+  }
+  &.active{
+    background-color: $red;
+    border: none;
+    color: #fff;
+  }
+  @media only screen and (max-width: 375px) {
+    font-size: 14px !important;
+  }
+}
+.m-show{
+  display:none;
+}
+.d-show{
+  display:block;
+}
+@media only screen and (max-width: 375px) {
+  .m-show{
+    display:block;
+  }
+  .d-show{
+    display:none;
+  }
+  .m-white-text{
+    color: #fff;
+  }
+  .fs-18,
+  .fs-15{
+    font-size:12px;
+  }
+  .m-text-center{
+    text-align: center;
+  }
+}
