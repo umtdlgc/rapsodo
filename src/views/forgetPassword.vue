@@ -31,7 +31,7 @@
 </template>
 <script>
 export default {
-  name: "SignUp",
+  name: "forgetPassword",
 };
 </script>
 <style lang="scss" scoped>

@@ -15,16 +15,26 @@
       Please sign-in to your account.
     </h3>
     <img src="./../assets/players-bg.png" class="mobile-top-image m-show" />
-    <form class="mb-3">
+    <div class="form mb-3">
       <div class="d-flex mb-1 d-flex flex-column">
         <label class="black-text fs-12 medium mb-1">E-mail</label>
-        <input type="text" placeholder="Enter e-mail" class="small" />
+        <input
+          type="text"
+          placeholder="Enter e-mail"
+          class="small"
+          v-model="email"
+        />
       </div>
       <div class="d-flex mb-1 d-flex flex-column">
         <label class="black-text fs-12 medium mb-1"> Password</label>
-        <input type="password" placeholder="Enter Password" class="small" />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          class="small"
+          v-model="password"
+        />
       </div>
-      <router-link class="mb-5 router-link bold gray-text" to="/">
+      <router-link class="mb-5 router-link bold gray-text" to="/forgetPassword">
         Forgot your password?
       </router-link>
       <label class="fs-12 gray-text subline-text m-show">
@@ -34,9 +44,15 @@
           <b class="black-text bold">Privacy Policy</b>
         </p>
       </label>
-      <button class="btn small bold passive mb-2">Sign in</button>
+      <button
+        class="btn small bold mb-2"
+        @click="signIn"
+        :class="{ passive: !isValid }"
+      >
+        Sign in
+      </button>
       <button class="btn small bold">Sign up</button>
-    </form>
+    </div>
     <label class="fs-12 gray-text subline-text d-show">
       By continuing , you agree to
       <b class="black-text bold">Rapsodo’s Terms of Use</b> and
@@ -45,8 +61,38 @@
   </div>
 </template>
 <script>
+import { mapActions } from "vuex";
+import authService from "./../services/auth.js";
+
 export default {
   name: "SignIn",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  computed: {
+    isValid() {
+      if (this.email.trim() !== "" && this.password.trim() !== "") {
+        return true;
+      }
+      return false;
+    },
+  },
+  methods: {
+    ...mapActions({
+      updateToken: "updateToken",
+    }),
+    async signIn() {
+      const res = await authService.signIn({
+        email: this.email,
+        password: this.password,
+      });
+      this.updateToken(res.data.token);
+      this.$router.push("/homepage");
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -125,7 +171,7 @@ export default {
       line-height: 1.7;
     }
   }
-  form {
+  .form {
     @media only screen and (max-width: 375px) {
       margin-top: 163px;
       margin-bottom: 0;
