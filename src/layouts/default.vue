@@ -25,22 +25,26 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 480px) {
     background: url("./../assets/mobile-bg-path.svg");
     background-position: top;
     background-repeat: no-repeat;
     align-items: flex-start;
-    background-position-y: -12px;
+    background-position-y: -49px;
+    background-size: 100%;
+    @media only screen and (max-width: 375px) {
+      background-position-y: -12px;
+    }
   }
   .container {
     max-width: 1040px;
     width: 100%;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 480px) {
       max-width: 335px;
     }
   }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 480px) {
   #language-picker {
     display: none;
   }

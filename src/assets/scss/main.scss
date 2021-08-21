@@ -134,7 +134,7 @@ input[type="password"]{
     border: none;
     color: #fff;
   }
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 480px) {
     font-size: 14px !important;
   }
 }
@@ -144,7 +144,7 @@ input[type="password"]{
 .d-show{
   display:block;
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 480px) {
   .m-show{
     display:block;
   }

@@ -20,7 +20,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 480px) {
     background: url("./../assets/mobile-bg-path.svg");
     background-position: top;
     background-repeat: no-repeat;
@@ -30,7 +30,7 @@ export default {
   .container {
     max-width: 1040px;
     width: 100%;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 480px) {
       max-width: 335px;
     }
   }
