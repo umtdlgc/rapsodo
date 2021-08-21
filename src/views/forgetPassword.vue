@@ -46,7 +46,7 @@ export default {
   padding: 45px 40px;
   z-index: 1;
   overflow: hidden;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 480px) {
     background: transparent;
     padding: 0;
     width: auto;
@@ -66,7 +66,7 @@ export default {
     height: 100%;
     content: "";
     z-index: -1;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 480px) {
       display: none;
     }
   }
@@ -74,7 +74,7 @@ export default {
     width: 129px;
     height: 28.4px;
     object-fit: contain;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 480px) {
       display: none;
     }
   }
@@ -83,7 +83,7 @@ export default {
     width: 132.2px;
     height: 29.1px;
     margin: 30px auto 5px;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 480px) {
       display: block;
     }
   }
@@ -93,7 +93,7 @@ export default {
     color: #7c7e7f !important;
     text-decoration: none;
     display: block;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 480px) {
       margin-bottom: 0;
     }
   }
@@ -101,7 +101,7 @@ export default {
     border-top: 1px solid #ededed;
     max-width: 443px;
     padding-top: 10px;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 480px) {
       font-size: 10px;
       text-align: center;
       border: none;
@@ -113,7 +113,7 @@ export default {
   form {
     margin-top: auto;
     height: 100%;
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 480px) {
       margin-top: 133px;
       margin-bottom: 0;
       padding: 85px 15px 26px 15px;
